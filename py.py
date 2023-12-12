@@ -27,27 +27,45 @@ def contacts_main():
     
 def contacts_menu():
     #sdfksdhfksjdhfkhfsdfdkhf
-    
+    print('')
     
 def contacts_add():
     #fwejoierwji
+    another = 'y'
+    contacts_file = open('contacts.txt', 'a')
     
+    while another.lower() == 'y':
+        print('Enter the following contact data:\n')
+        name = input('Name: ')
+        street = input('Street address: ')
+        phone = input('Phone number: ')
+        email = input('Email address: ')
+        
+        contacts_file.write(name + '\n')
+        contacts_file.write(street + '\n')
+        contacts_file.write(phone + '\n')
+        contacts_file.write(email + '\n')
+        
+        another = input('\nDo you wish to enter another contact? (y to continue): ')
+        
+    contacts_file.close()
+    print('\nYour Mother')
     
 def contacts_search():
     #ji
-    
+    print()
     
 def contacts_edit():
     #uhkjhsdkfjhdskjdsfh
-    
+    print()
     
 def contacts_delete():
     #r
-    
+    print()
     
 def contacts_display():
     #POOP FART
-    
+    print()
     
 
     
