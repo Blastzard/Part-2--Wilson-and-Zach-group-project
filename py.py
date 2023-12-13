@@ -104,6 +104,8 @@ def contacts_edit():
         name=(contacts_file.readline()).rstrip("\n")
     if found==False:
         print("Contact not found.")
+    else:
+        print("Contact successfully edited.")
     contacts_file.close()
     temp_file.close()
     os.remove("contacts.txt")
@@ -131,6 +133,8 @@ def contacts_delete():
         name=(contacts_file.readline()).rstrip("\n")
     if found==False:
         print("Contact not found.")
+    else:
+        print("Contact successfully edited.")
     contacts_file.close()
     temp_file.close()
     os.remove("contacts.txt")
