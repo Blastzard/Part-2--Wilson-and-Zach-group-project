@@ -21,13 +21,26 @@ def contacts_main():
                 contacts_delete()
         elif choice == 4:
               contacts_display()
-                
-    choice = int(contacts_menu())
+        choice = int(contacts_menu())  
+    
     print('Thank you for using the program. However, your mother.')
     
 def contacts_menu():
     #sdfksdhfksjdhfkhfsdfdkhf
-    print('')
+    
+    #display menu
+    print('\nWelcome to the Contact Manager!')
+    print('1. Add a record')
+    print('2. Modify a record')
+    print('3. Delete a record')
+    print('4. Display all saved records')
+    print('5. Exit')
+    
+    #prompts the user for a choice
+    choice = (input('Enter a choice: '))
+    
+    return choice
+    
     
 def contacts_add():
     #fwejoierwji
@@ -52,7 +65,6 @@ def contacts_add():
     print('\nYour Mother')
     
 def contacts_search():
-    #ji
     print()
     
 def contacts_edit():
@@ -64,8 +76,33 @@ def contacts_delete():
     print()
     
 def contacts_display():
-    #POOP FART
-    print()
+   
+    #open file and read the first desc
+    contacts_file = open('contacts.txt', 'r')
+    name = contacts_file.readline()
     
-
-    
+    #loop to ead, strip, and output each record
+    while name != '':
+        
+        street = contacts_file.readline()
+        phone = contacts_file.readline()
+        email = contacts_file.readline()
+        
+        #strip the newline
+        name = name.rstrip('\n')
+        street = street.rstrip('\n')
+        phone = phone.rstrip('\n')
+        email = email.rstrip('\n')
+          
+        
+        print('\n''Name: ', name)
+        print('Street Address: ', street)
+        print('Phone Number: ', phone)
+        print('Email Address: ', email)
+        
+        #refresh the description
+        name = contacts_file.readline()
+     
+    #close file and notify user 
+    contacts_file.close()
+    print('\nAll records retrieved.')
